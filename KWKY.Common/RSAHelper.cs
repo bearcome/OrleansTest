@@ -11,8 +11,9 @@ namespace KWKY.Common
     /// RSA加解密 使用OpenSSL的公钥加密/私钥解密
     /// 工具下载地址
     /// https://help.aliyun.com/document_detail/123151.html?spm=5176.10695662.1996646101.searchclickresult.50622b26CiZHHV&aly_as=vsyquH7w
+    /// 加密源数据超长会报异常
     /// </summary>
-    public class RSAHelper
+    public class RSA2Helper
     {
         private readonly RSA _privateKeyRsaProvider;
         private readonly RSA _publicKeyRsaProvider;
@@ -20,15 +21,13 @@ namespace KWKY.Common
         private readonly Encoding _encoding;
 
         /// <summary>
-        /// 实例化RSAHelper
+        /// 实例化RSAHelper  RSA2 SHA256 密钥长度至少为2048
         /// </summary>
-        /// <param name="rsaType">加密算法类型 RSA SHA1;RSA2 SHA256 密钥长度至少为2048</param>
-        /// <param name="encoding">编码类型</param>
         /// <param name="privateKey">私钥</param>
         /// <param name="publicKey">公钥</param>
-        public RSAHelper (RSAType rsaType, Encoding encoding, string privateKey, string publicKey = null)
+        public RSA2Helper (string privateKey, string publicKey = null)
         {
-            _encoding = encoding;
+            _encoding = Encoding.UTF8;
             if ( !string.IsNullOrEmpty(privateKey) )
             {
                 _privateKeyRsaProvider = CreateRsaProviderFromPrivateKey(privateKey);
@@ -39,7 +38,7 @@ namespace KWKY.Common
                 _publicKeyRsaProvider = CreateRsaProviderFromPublicKey(publicKey);
             }
 
-            _hashAlgorithmName = rsaType == RSAType.RSA ? HashAlgorithmName.SHA1 : HashAlgorithmName.SHA256;
+            _hashAlgorithmName =  HashAlgorithmName.SHA256;
         }
 
         #region 使用私钥签名
@@ -298,21 +297,5 @@ namespace KWKY.Common
 
         #endregion
 
-    }
-
-    /// <summary>
-    /// RSA算法类型
-    /// </summary>
-    public enum RSAType
-    {
-        /// <summary>
-        /// SHA1
-        /// </summary>
-        RSA = 0,
-        /// <summary>
-        /// RSA2 密钥长度至少为2048
-        /// SHA256
-        /// </summary>
-        RSA2
     }
 }

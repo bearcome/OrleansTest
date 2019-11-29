@@ -28,7 +28,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XUnitClusterTest", "XUnitCl
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XUnitClientTest", "XUnitClientTest\XUnitClientTest.csproj", "{51167678-35E3-4686-ABC9-3FF277B45C7F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnitCommonTest", "XUnitCommonTest\XUnitCommonTest.csproj", "{12D3EE85-6E09-4253-8C32-92AA9BABFD39}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XUnitCommonTest", "XUnitCommonTest\XUnitCommonTest.csproj", "{12D3EE85-6E09-4253-8C32-92AA9BABFD39}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
