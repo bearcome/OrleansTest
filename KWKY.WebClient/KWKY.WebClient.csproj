@@ -8,6 +8,7 @@
     <UserSecretsId>c3ec5822-b736-47bb-954b-27a2f9b47926</UserSecretsId>
     <LangVersion>preview</LangVersion>
     <Configurations>Debug;Release;DevelopDebug</Configurations>
+    <NullableContextOptions>enable</NullableContextOptions>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -63,7 +64,6 @@
     <ProjectReference Include="..\KWKY.Common\KWKY.Common.csproj" />
     <ProjectReference Include="..\KWKY.IGrains\KWKY.IGrains.csproj" />
     <ProjectReference Include="..\KWKY.Model\KWKY.Model.csproj" />
-    <ProjectReference Include="..\KWKY.Silo\KWKY.Silo.csproj" />
   </ItemGroup>
 
   <ItemGroup>

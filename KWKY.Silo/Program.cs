@@ -16,15 +16,20 @@ using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
 
+#nullable enable
 namespace KWKY.Silo
 {
     class Program
     {
-        static ISiloHost siloHost;
         static readonly ManualResetEvent _siloStopped = new ManualResetEvent(false);
         static bool siloStopping = false;
         static readonly object syncLock = new object();
+
+#pragma warning disable CS8618 // 不可为 null 的字段未初始化。请考虑声明为可以为 null。
+        static ISiloHost siloHost;
         static ILogger _logger;
+#pragma warning restore CS8618 // 不可为 null 的字段未初始化。请考虑声明为可以为 null。
+
         static void Main (string[] args)
         {
             LogManager.LoadConfiguration("Nlog.config");

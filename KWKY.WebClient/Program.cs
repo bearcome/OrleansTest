@@ -9,6 +9,8 @@ namespace KWKY.WebClient
         public static void Main (string[] args)
         {
             CreateWebHostBuilder(args).Build().Run();
+            string ss = null;
+            var sstr = ss?.ToString();
         }
 
         public static IWebHostBuilder CreateWebHostBuilder (string[] args) =>

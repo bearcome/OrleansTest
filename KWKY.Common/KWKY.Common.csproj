@@ -4,6 +4,8 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <LangVersion>preview</LangVersion>
     <Configurations>Debug;Release;DevelopDebug</Configurations>
+    <NullableContextOptions>enable</NullableContextOptions>
+
   </PropertyGroup>
 
   <ItemGroup>

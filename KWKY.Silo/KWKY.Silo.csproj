@@ -9,6 +9,7 @@
     <Configurations>Debug;Release;DevelopDebug</Configurations>
     <ApplicationIcon />
     <StartupObject />
+    <NullableContextOptions>enable</NullableContextOptions>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
