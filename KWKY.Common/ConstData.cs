@@ -58,6 +58,8 @@
 
         public const string MobileRegex = @"^[1]+[3,9]+\d{9}"; //精准版 @"^(13[0-9]|14[579]|15[0-3,5-9]|16[6]|17[0135678]|18[0-9]|19[89])\d{8}$")
         public const string ChineseIDRegex = @"(^\d{18}$)|(^\d{17}(\d|X|x)$)|(^\d{15}$)";
+        //指定长度的数字
+        public const string NumberRegex = "^\\d{{{0}}}$";
         #endregion
 
 
