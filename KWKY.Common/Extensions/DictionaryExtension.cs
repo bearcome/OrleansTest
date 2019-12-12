@@ -8,7 +8,7 @@ namespace KWKY.Common.Extensions
     {
         public static TValue SafeGetByKey<TKey, TValue> (this Dictionary<TKey, TValue> dictionary, TKey key)
         {
-            if ( key == null )
+            if ( key == null || dictionary == null)
                 return default;
             dictionary.TryGetValue(key, out TValue value);
             return value;
